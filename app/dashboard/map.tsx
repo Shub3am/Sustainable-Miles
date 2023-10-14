@@ -1,9 +1,9 @@
+"use client"
 import { useEffect } from "react";
 import tw from "tailwind-styled-components";
-
-import mapboxgl from "!mapbox-gl";
-
-mapboxgl.accessToken = process.env.ACCESS_TOKEN;
+import 'dotenv/config'
+import mapboxgl from "mapbox-gl";
+mapboxgl.accessToken = "pk.eyJ1Ijoic2h1YmhhbXZzIiwiYSI6ImNsbnFsemhubDEwZ2gyam1wNzBnMmw3aDIifQ.lz2spERI3IHw2H9qLT0sNA";
 
 const Map = (props) => {
   useEffect(() => {
