@@ -1,5 +1,5 @@
 export default function How() {
-    return (<section className="text-gray-600 body-font">
+    return (<section className="text-gray-600 body-font" id="idea">
     <div className="container px-5 py-24 mx-auto capitalize"><div className="text-center mb-20">
         <h1 className="font-semibold text-2xl capitalize font-mono text-black">How Gamifying mobility can help sustainability in a number of ways!</h1></div>
       <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">

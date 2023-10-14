@@ -2,7 +2,7 @@ import Image from "next/image"
 export default function Working() {
 
   return (
-    <div className="text-gray-600 body-font capitalize">
+    <div className="text-gray-600 body-font capitalize" id="howitworks">
     <div className="container px-5 py-24 mx-auto flex flex-wrap">
       <div className="flex flex-wrap w-full">
         <div className="lg:w-2/5 md:w-1/2 md:pr-10 md:py-6">
