@@ -8,6 +8,7 @@ export default function Register() {
     const [name, setName] = useState("")
     const [password, setPassword] = useState("")
     const [isError, setError] = useState(false)
+    useEffect(()=> {if(localStorage["logged_in"]) {router.push("/dashboard")}}, [])
 
     const checkData = async () => {
         let call = fetch("/api/accounts", { method: "post", body: JSON.stringify({type: "register", email: email, password: password, name: name})})
@@ -16,6 +17,7 @@ export default function Register() {
             localStorage.setItem("logged_in", "true")
             localStorage.setItem("name", name)
             localStorage.setItem("email", email)
+            localStorage.setItem("points", '0')
             router.push("/dashboard")
         } else {
             setError(true)

@@ -1,9 +1,25 @@
 "use client"
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import { useRouter } from "next/navigation";
 export default function Login() {
+    const router = useRouter()
+    useEffect(()=> {if(localStorage["logged_in"]) {router.push("/dashboard")}}, [])
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const[isError, setError] = useState(false)
+    const checkData = async () => {
+        let call = await fetch("/api/accounts", { method: "post", body: JSON.stringify({type: "login", email: email, password: password})})
+        let res = await call.json()
+        if (res.result) {
+            localStorage.setItem("logged_in", "true")
+            localStorage.setItem("name", res.name)
+            localStorage.setItem("email", email)
+            localStorage.setItem("points", res.points)
+            router.push("/dashboard")
+        } else {
+            setError(true)
+        }
+    }
     
     return (
         <div className="relative">
@@ -74,8 +90,7 @@ export default function Login() {
                           onClick={(evt)=> {
                             evt.preventDefault()
                            if(email && password) {
-                            fetch("/api/accounts", { method: "post", body: JSON.stringify({type: "login", email: email, password: password})})
-                           } else {
+checkData()                           } else {
                             setError(true)
                            }
                           }}    

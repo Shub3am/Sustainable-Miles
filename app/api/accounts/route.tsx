@@ -6,16 +6,15 @@ export async function POST(request: Request) {
     if (data.type == "login") {
         
         let check = await prisma.users.findFirst({where: {email: data.email, password: data.password}})
-        let checkDone = check.then(data=> data)
-        if (checkDone) {
-            return NextResponse.json(true)
+        console.log(check)
+        if (check) {
+            return NextResponse.json({result: true, name: check.name, points: check.points})
         }else {
             return NextResponse.json(false)
         }
     } else if (data.type == "register") {
         let check = await prisma.users.create({data: {email: data.email, password: data.password, name: data.name}})
-        let checkDone = check.then(data=> data)
-        if (checkDone) {
+        if (check) {
             return NextResponse.json(true)
         } else {
             return NextResponse.json(false)
