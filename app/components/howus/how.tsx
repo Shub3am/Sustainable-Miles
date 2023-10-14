@@ -42,14 +42,10 @@ export default function How() {
         <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
           <h2 className="text-gray-900 text-lg title-font font-medium mb-2">Awareness</h2>
           <p className="leading-relaxed text-base">Gamification can raise awareness of sustainable transportation options and their benefits, making sustainable transportation more mainstream.</p>
-          <a className="mt-3 text-green-500 inline-flex items-center">Learn More
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </a>
+
         </div>
       </div>
-      <button className="flex mx-auto mt-20 text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">Button</button>
+      <button className="flex mx-auto mt-20 text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg font-mono">How We Will Sustain The App!</button>
     </div>
   </section>)
 }
