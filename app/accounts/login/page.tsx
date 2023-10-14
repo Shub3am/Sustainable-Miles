@@ -1,4 +1,10 @@
+"use client"
+import {useState} from "react";
 export default function Login() {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const[isError, setError] = useState(false)
+    
     return (
         <div className="relative">
           <img
@@ -27,6 +33,7 @@ export default function Login() {
                     </h3>
                     <form>
                       <div className="mb-1 sm:mb-2">
+                      {isError ?<h2 className="text-red-600">Required Information Missing</h2>: null}
                         <label
                           htmlFor="firstName"
                           className="inline-block mb-1 font-medium"
@@ -37,6 +44,7 @@ export default function Login() {
                           placeholder="John"
                           required
                           type="text"
+                          onChange={(evt) => {                     setEmail(evt.target.value)}}
                           className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                           id="firstName"
                           name="firstName"
@@ -53,6 +61,7 @@ export default function Login() {
                           placeholder="******"
                           required
                           type="password"
+                          onChange={(evt) => {                     setPassword(evt.target.value)}}
                           className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                           id="lastName"
                           name="lastName"
@@ -62,6 +71,14 @@ export default function Login() {
                       <div className="mt-4 mb-2 sm:mb-4">
                         <button
                           type="submit"
+                          onClick={(evt)=> {
+                            evt.preventDefault()
+                           if(email && password) {
+                            fetch("/api/accounts")
+                           } else {
+                            setError(true)
+                           }
+                          }}    
                           className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                         >
                           Login
@@ -70,6 +87,7 @@ export default function Login() {
                       <p className="text-xs text-gray-600 sm:text-sm">
                         Thank You for saving Earth!
                       </p>
+                      <a href="/accounts/register"><p className="text-lime-500 uppercase">Register</p></a>
                     </form>
                   </div>
                 </div>
