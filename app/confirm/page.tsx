@@ -8,7 +8,7 @@ import RideSelector from "./RideSelector";
 import { useSearchParams } from 'next/navigation';
 
 const Confirm = () => {
-    let access= "pk.eyJ1Ijoic2h1YmhhbXZzIiwiYSI6ImNsbnFsemhubDEwZ2gyam1wNzBnMmw3aDIifQ.lz2spERI3IHw2H9qLT0sNA"
+    const access= "pk.eyJ1Ijoic2h1YmhhbXZzIiwiYSI6ImNsbnFsemhubDEwZ2gyam1wNzBnMmw3aDIifQ.lz2spERI3IHw2H9qLT0sNA"
   const router = useRouter();
   const searchParams = useSearchParams();
     
@@ -20,6 +20,7 @@ const Confirm = () => {
   const [dropoffCoordinate, setDropoffCoordinate] = useState([
     -77.1703, 38.8407,
   ]);
+
 
   const getPickupCoordinate = (pickuplocation) => {
     fetch(
