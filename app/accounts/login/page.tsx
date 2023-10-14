@@ -74,7 +74,7 @@ export default function Login() {
                           onClick={(evt)=> {
                             evt.preventDefault()
                            if(email && password) {
-                            fetch("/api/accounts")
+                            fetch("/api/accounts", { method: "post", body: JSON.stringify({type: "login", email: email, password: password})})
                            } else {
                             setError(true)
                            }

@@ -1,10 +1,26 @@
 "use client"
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+
 export default function Register() {
+    const router = useRouter()
     const [email, setEmail] = useState("")
     const [name, setName] = useState("")
     const [password, setPassword] = useState("")
     const [isError, setError] = useState(false)
+
+    const checkData = async () => {
+        let call = fetch("/api/accounts", { method: "post", body: JSON.stringify({type: "register", email: email, password: password, name: name})})
+        let res = call.then(resp => resp)
+        if (res) {
+            localStorage.setItem("logged_in", "true")
+            localStorage.setItem("name", name)
+            localStorage.setItem("email", email)
+            router.push("/dashboard")
+        } else {
+            setError(true)
+        }
+    }
     return (
         <div className="relative">
           <img
@@ -33,7 +49,7 @@ export default function Register() {
                     </h3>
                     <form>
                       <div className="mb-1 sm:mb-2">
-                        {isError ?<h2 className="text-red-600">Required Information Missing</h2>: null}
+                        {isError ?<h2 className="text-red-600">Something bad happended!</h2>: null}
                         <label
                           htmlFor="firstName"
                           className="inline-block mb-1 font-medium"
@@ -62,6 +78,7 @@ export default function Register() {
                           placeholder="john.doe@example.org"
                           required
                           type="email"
+                          minLength={5}
                           onChange={(evt) => {setEmail(evt.target.value)}}
                           className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-purple-400 focus:outline-none focus:shadow-outline"
                           id="email"
@@ -82,6 +99,7 @@ export default function Register() {
                           onChange={(evt) => {setPassword(evt.target.value)}}
                           className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-purple-400 focus:outline-none focus:shadow-outline"
                           id="email"
+                          minLength={8}
                           name="email"
                         />
                       </div>
@@ -92,7 +110,7 @@ export default function Register() {
                           onClick={(evt)=> {
                             evt.preventDefault()
                            if(email && password && name) {
-                            fetch("/api/accounts")
+                            checkData()
                            } else {
                             setError(true)
                            }
