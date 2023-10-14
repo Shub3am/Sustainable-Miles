@@ -1,9 +1,9 @@
 import Hero from "./components/hero/hero"
 
-import How from "./components/howus/how"
-import Working from "./components/working/working"
+import HowItWorks from "./components/howus/how"
+import Workings from "./components/working/working"
 export default function Home() {
   return (
-    <main><Hero/><How/><Working/></main>
+    <main><Hero/><HowItWorks/><Workings/></main>
       )
 }
