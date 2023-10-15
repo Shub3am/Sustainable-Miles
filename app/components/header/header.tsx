@@ -3,8 +3,8 @@ export default function Header() {
     return <header className="text-gray-600 body-font"> <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
     <nav className="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto justify-center">
       <a className="mr-5 hover:text-gray-900" href="/">Home</a>
-      <a className="mr-5 hover:text-gray-900" href="#howitworks">How It Works</a>
-      <a className="hover:text-gray-900" href="#idea">Our Idea</a>
+      <a className="mr-5 hover:text-gray-900" href="/#howitworks">How It Works</a>
+      <a className="hover:text-gray-900" href="/#idea">Our Idea</a>
     </nav>
     <a className="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
       <Image alt="logo" src="/badge.png" width={50} height={50}/>
