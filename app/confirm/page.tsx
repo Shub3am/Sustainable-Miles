@@ -66,7 +66,7 @@ const Confirm = ({searchParams}) => {
           pickupCoordinate={pickupCoordinate}
           dropoffCoordinate={dropoffCoordinate}
         />
-        <ConfirmButtonContainer>Confirm</ConfirmButtonContainer>
+        <ConfirmButtonContainer style={{marginBottom: 50}}>Confirm</ConfirmButtonContainer>
       </RideContainer>
     </Wrapper>
   );
@@ -81,7 +81,7 @@ flex-1  h-1/2 overflow-y-scroll flex flex-col
 `;
 
 const ConfirmButtonContainer = tw.div`
-bg-black flex text-xl  items-center py-4 text-white mt-4 justify-center text-center m-4 transform hover:scale-105 transition cursor-pointer
+bg-black flex text-xl items-center py-4 text-white mt-4 justify-center text-center m-4 transform hover:scale-105 transition cursor-pointer
 
 `;
 const ButtonContainer = tw.div`
