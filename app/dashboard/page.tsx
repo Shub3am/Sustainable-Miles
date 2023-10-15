@@ -4,6 +4,7 @@ import Map from "./map";
 import Link from "next/link";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import "./dashboard.css"
 
 export default function Dashboard() {
     const router = useRouter()
@@ -18,16 +19,17 @@ export default function Dashboard() {
       <ActionItems>
 
         <ActionButtons>
-          <Link href="/search" passHref>
+          <Link className="btn-href" href="/search" passHref>
             <ActionButton>
               <ActionButtonImage src="https://i.ibb.co/cyvcpfF/uberx.png" />
               Ride
             </ActionButton>
           </Link>
-          <ActionButton className="text-red-600">
+          <Link className="btn-href" href="/leaderboard" passHref>
+          <ActionButton className="text-orange-600">
             <ActionButtonImage src="https://i.ibb.co/n776JLm/bike.png" />
-            Wheels (Not Available)
-          </ActionButton>
+            LeaderBoard
+          </ActionButton></Link>
           <ActionButton className="text-red-600">
             <ActionButtonImage src="https://i.ibb.co/5RjchBg/uberschedule.png" />
             Reserve (Not Available)
