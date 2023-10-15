@@ -5,15 +5,10 @@ import Map from "../dashboard/map";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import RideSelector from "./RideSelector";
-import { useSearchParams } from 'next/navigation';
 
-const Confirm = () => {
-    const access= "pk.eyJ1Ijoic2h1YmhhbXZzIiwiYSI6ImNsbnFsemhubDEwZ2gyam1wNzBnMmw3aDIifQ.lz2spERI3IHw2H9qLT0sNA"
+const Confirm = ({searchParams}) => {
   const router = useRouter();
-  const searchParams = useSearchParams();
-    
-  const pickuplocation = searchParams.get("pickuplocation")
-  const dropofflocation = searchParams.get("dropofflocation")
+  const { pickuplocation, dropofflocation } = searchParams;
   const [pickupCoordinate, setPickupCoordinate] = useState([
     -77.052256, 38.924735,
   ]);
@@ -21,12 +16,11 @@ const Confirm = () => {
     -77.1703, 38.8407,
   ]);
 
-
   const getPickupCoordinate = (pickuplocation) => {
     fetch(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${pickuplocation}.json?` +
         new URLSearchParams({
-          access_token: access,
+          access_token: "pk.eyJ1Ijoic2h1YmhhbXZzIiwiYSI6ImNsbnFsemhubDEwZ2gyam1wNzBnMmw3aDIifQ.lz2spERI3IHw2H9qLT0sNA",
           limit: 1,
         })
     )
@@ -40,7 +34,7 @@ const Confirm = () => {
     fetch(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${dropofflocation}.json?` +
         new URLSearchParams({
-          access_token:access,
+          access_token: "pk.eyJ1Ijoic2h1YmhhbXZzIiwiYSI6ImNsbnFsemhubDEwZ2gyam1wNzBnMmw3aDIifQ.lz2spERI3IHw2H9qLT0sNA",
           limit: 1,
         })
     )

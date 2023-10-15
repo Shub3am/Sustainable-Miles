@@ -5,8 +5,9 @@ import tw from "tailwind-styled-components";
 import { carList } from "../transportList";
 
 const RideSelector = (props) => {
+  console.log(carList)
   const [rideDuration, setRideDuration] = useState(0);
-    const access = "pk.eyJ1Ijoic2h1YmhhbXZzIiwiYSI6ImNsbnFsemhubDEwZ2gyam1wNzBnMmw3aDIifQ.lz2spERI3IHw2H9qLT0sNA"
+
   useEffect(() => {
     const pickupCoord = props.pickupCoordinate;
     const dropoffCoord = props.dropoffCoordinate;
@@ -20,12 +21,14 @@ const RideSelector = (props) => {
     fetch(
       `https://api.mapbox.com/directions/v5/mapbox/driving/${props.pickupCoordinate[0]},${props.pickupCoordinate[1]};${props.dropoffCoordinate[0]},${props.dropoffCoordinate[1]}?` +
         new URLSearchParams({
-          access_token:access,
+          access_token: "pk.eyJ1Ijoic2h1YmhhbXZzIiwiYSI6ImNsbnFsemhubDEwZ2gyam1wNzBnMmw3aDIifQ.lz2spERI3IHw2H9qLT0sNA",
         })
     )
       .then((response) => response.json())
       .then((data) => {
+        
         if (data.routes[0]) {
+
           setRideDuration(data.routes[0].duration / 100);
         }
       });
@@ -35,8 +38,8 @@ const RideSelector = (props) => {
     <Wrapper>
       <Title>Choose a ride, or swipe up for more</Title>
       <CarList>
-        {carList.map((car) => (
-          <Car key="car">
+        {carList.map((car, index) => (
+          <Car key={index}>
             <CarImage src={car.imgUrl} />
             <CarDetails>
               <Service>{car.service}</Service>

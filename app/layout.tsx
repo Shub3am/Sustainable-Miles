@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Header from "./components/header/header"
 import Footer from './components/footer/footer'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
