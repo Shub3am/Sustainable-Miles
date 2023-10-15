@@ -3,10 +3,12 @@ import React from "react";
 import { useEffect, useState } from "react";
 import tw from "tailwind-styled-components";
 import { carList } from "../transportList";
+import "./dash.css"
 
 const RideSelector = (props) => {
-  console.log(carList)
+  
   const [rideDuration, setRideDuration] = useState(0);
+  const [selected, setSelected] = useState({index: "", enabled: false})
 
   useEffect(() => {
     const pickupCoord = props.pickupCoordinate;
@@ -39,16 +41,20 @@ const RideSelector = (props) => {
       <Title>Choose a ride, or swipe up for more</Title>
       <CarList>
         {carList.map((car, index) => (
-          <Car key={index}>
+          <div key={index} className={selected.index == index ? "color": ""}>
+          <Car key={index} onClick={()=>{setSelected({index: index, enabled: !selected.enabled})
+        localStorage.setItem("pointer", String(car.points))
+        }}>
+            
             <CarImage src={car.imgUrl} />
             <CarDetails>
               <Service>{car.service}</Service>
-              <Time>5 min away</Time>
+              <Time>{Math.round(Math.random() * 100 + 5)} min away {car.points}</Time>
             </CarDetails>
             <CarPrice>
-              {"$" + (rideDuration * car.multiplier).toFixed(2)}{car.points}
+              {"$" + (rideDuration * car.multiplier).toFixed(2) }
             </CarPrice>
-          </Car>
+          </Car></div>
         ))}
       </CarList>
     </Wrapper>

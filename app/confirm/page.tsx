@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import RideSelector from "./RideSelector";
 
 const Confirm = ({searchParams}) => {
+  
   const router = useRouter();
   const { pickuplocation, dropofflocation } = searchParams;
   const [pickupCoordinate, setPickupCoordinate] = useState([
@@ -64,9 +65,12 @@ const Confirm = ({searchParams}) => {
       <RideContainer>
         <RideSelector
           pickupCoordinate={pickupCoordinate}
+          
           dropoffCoordinate={dropoffCoordinate}
         />
-        <ConfirmButtonContainer style={{marginBottom: 50}}>Confirm</ConfirmButtonContainer>
+        <ConfirmButtonContainer onClick={()=> { 
+          fetch("/api/points", { method: "post", body: JSON.stringify({points: localStorage.getItem("pointer"), email: localStorage.getItem("email")})})
+          alert(`Thank You for choosing This Transport, You got ${localStorage.getItem("pointer")} points will in real life get your points after your trip has been finished`)}} style={{marginBottom: 50}}>Confirm</ConfirmButtonContainer>
       </RideContainer>
     </Wrapper>
   );
