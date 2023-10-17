@@ -1,5 +1,5 @@
 ## By Shubham Vishwakarma
-## Old Hackathon Project turned Startup Now
+## Hackathon Project turned Startup Now
 ### CF Code 08, Sunbeam School Lahartara
 
 ```bash
