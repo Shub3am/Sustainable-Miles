@@ -1,5 +1,5 @@
 ## By Shubham Vishwakarma
-## Hackathon Project turned Startup
+## Old Hackathon Project turned Startup Now
 ### CF Code 08, Sunbeam School Lahartara
 
 ```bash
@@ -13,4 +13,4 @@ bun dev
 ```
 
 ## About Our App
-Our App gamifies how people use transport and Rewards them for Same
+Our App gamifies how people use transport and Rewards them for Same. 
