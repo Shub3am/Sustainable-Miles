@@ -1,6 +1,5 @@
 ## By Shubham Vishwakarma
-## Hackathon Project turned Startup Now
-### CF Code 08, Sunbeam School Lahartara
+## Hackathon Project turned Side-Project
 
 ```bash
 npm run dev
@@ -13,4 +12,4 @@ bun dev
 ```
 
 ## About Our App
-Our App gamifies how people use transport and Rewards them for Same. 
+Sustainable Miles is an application which gamifies and incentives people for using Eco-Friendly Mode of transportations.
