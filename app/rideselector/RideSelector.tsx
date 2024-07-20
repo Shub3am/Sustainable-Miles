@@ -7,6 +7,7 @@ import Image from "next/image";
 
 const RideSelector = (props) => {
   const [rideDuration, setRideDuration] = useState(0);
+  const [rideDistance, setRideDistance] = useState(0);
   const [selected, setSelected] = useState({ index: "", enabled: false });
 
   useEffect(() => {
@@ -29,6 +30,8 @@ const RideSelector = (props) => {
       .then((response) => response.json())
       .then((data) => {
         if (data.routes[0]) {
+          console.log(data);
+          setRideDistance(Math.round(data.routes[0].distance / 1000));
           setRideDuration(data.routes[0].duration / 100);
         }
       });
@@ -52,12 +55,12 @@ const RideSelector = (props) => {
               key={index}
               onClick={() => {
                 setSelected({ index: index, enabled: !selected.enabled });
-                localStorage.setItem("pointer", String(car.points));
+                props.SelectPoints(car.points);
               }}>
               <Image
                 alt="car-image"
-                width={40}
-                height={40}
+                width={100}
+                height={100}
                 className={"px-4"}
                 src={car.imgUrl}
               />
@@ -70,15 +73,30 @@ const RideSelector = (props) => {
                   {car.service}
                 </div>
                 <div
-                  className="text-blue-500 text-xs
+                  className="text-blue-500 text-xs flex gap-3
 ">
-                  {Math.round(Math.random() * 100 + 5)} min away {car.points}
+                  <p>{Math.round(Math.random() * 15 + 5)} min away</p>|
+                  <p> {car.points} Points</p>
                 </div>
+              </div>
+              <div
+                className="px-4 text-sm flex flex-col gap-1 line-through
+">
+                <p>
+                  {"Petrol Cost: ₹" +
+                    (rideDistance * (car.multiplier * 2)).toFixed(2)}
+                </p>
+                <p>
+                  {" "}
+                  {"Diesel Cost: ₹" +
+                    (rideDistance * (car.multiplier * 1.75)).toFixed(2)}
+                </p>
               </div>
               <div
                 className="px-4 text-sm
 ">
-                {"$" + (rideDuration * car.multiplier).toFixed(2)}
+                {"₹" + (rideDistance * car.multiplier).toFixed(2)}
+                <p>{rideDistance}km</p>
               </div>
             </div>
           </div>

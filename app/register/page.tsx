@@ -9,7 +9,7 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [isError, setError] = useState(false);
   useEffect(() => {
-    if (localStorage["logged_in"]) {
+    if (localStorage["data"]) {
       router.push("/dashboard");
     }
   }, []);
@@ -71,8 +71,7 @@ export default function Register() {
                     ) : null}
                     <label
                       htmlFor="firstName"
-                      className="inline-block mb-1 font-medium"
-                    >
+                      className="inline-block mb-1 font-medium">
                       Full Name
                     </label>
                     <input
@@ -91,8 +90,7 @@ export default function Register() {
                   <div className="mb-1 sm:mb-2">
                     <label
                       htmlFor="email"
-                      className="inline-block mb-1 font-medium"
-                    >
+                      className="inline-block mb-1 font-medium">
                       E-mail
                     </label>
                     <input
@@ -111,8 +109,7 @@ export default function Register() {
                   <div className="mb-1 sm:mb-2">
                     <label
                       htmlFor="password"
-                      className="inline-block mb-1 font-medium"
-                    >
+                      className="inline-block mb-1 font-medium">
                       Password
                     </label>
                     <input
@@ -139,8 +136,7 @@ export default function Register() {
                         } else {
                           setError(true);
                         }
-                      }}
-                    >
+                      }}>
                       Register
                     </button>
                   </div>
@@ -151,8 +147,7 @@ export default function Register() {
                     Already have an account?{" "}
                     <a
                       href="/login"
-                      className="text-theme-primary hover:text-gray-900 underline"
-                    >
+                      className="text-theme-primary hover:text-gray-900 underline">
                       Login In
                     </a>
                   </p>

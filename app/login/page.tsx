@@ -67,8 +67,7 @@ export default function Login() {
                       ) : null}
                       <label
                         htmlFor="firstName"
-                        className="inline-block mb-1 font-medium"
-                      >
+                        className="inline-block mb-1 font-medium">
                         Email
                       </label>
                       <input
@@ -86,8 +85,7 @@ export default function Login() {
                     <div className="mb-1 sm:mb-2">
                       <label
                         htmlFor="lastName"
-                        className="inline-block mb-1 font-medium"
-                      >
+                        className="inline-block mb-1 font-medium">
                         Password
                       </label>
                       <input
@@ -114,8 +112,7 @@ export default function Login() {
                             setError(true);
                           }
                         }}
-                        className="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg"
-                      >
+                        className="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">
                         Login
                       </button>
                     </div>
@@ -126,8 +123,7 @@ export default function Login() {
                       Don't have an account?{" "}
                       <a
                         href="/register"
-                        className="text-theme-primary hover:text-gray-900 underline"
-                      >
+                        className="text-theme-primary hover:text-gray-900 underline">
                         Resgiter
                       </a>
                     </p>
