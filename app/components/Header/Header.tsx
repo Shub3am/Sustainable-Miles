@@ -53,6 +53,7 @@ export default function Header() {
                 <button
                   onClick={() => {
                     localStorage.clear();
+                    router.refresh();
                     router.push("/login");
                   }}
                   className="ml-2 rounded border-theme-primary px-6 py-2 font-medium hover:bg-theme-primary-hover transition-colors bg-theme-primary text-white">
