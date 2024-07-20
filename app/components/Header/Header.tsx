@@ -2,40 +2,54 @@ import Image from "next/image";
 import electric_car from "./electric-car.png";
 export default function Header() {
   return (
-    <header className="text-gray-600 body-font">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <nav className="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto justify-center">
-          <a className="mr-5 hover:text-gray-900" href="/">
-            Home
-          </a>
-          <a className="mr-5 hover:text-gray-900" href="/#howitworks">
-            How It Works
-          </a>
-          <a className="hover:text-gray-900" href="/#idea">
-            Our Idea
-          </a>
-        </nav>
-        <a className="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
+    <header className="shadow">
+      <div className="relative flex max-w-screen-xl flex-col overflow-hidden px-2 py-2 md:mx-auto md:flex-row md:items-center">
+        <a
+          href="/"
+          className="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0"
+        >
           <Image alt="logo" src={electric_car} width={50} height={50} />
           <span className="ml-3 text-xl">Sustainable Miles</span>
         </a>
-        <div className="lg:w-2/5 inline-flex lg:justify-center ml-5 lg:ml-0">
-          <a href="/accounts/login">
-            <button className="inline-flex items-center justify-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
-              Dashboard
-              <svg
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                className="w-4 h-4 ml-1"
-                viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </button>
-          </a>
-        </div>
+        <input type="checkbox" className="peer hidden" id="navbar-open" />
+        <label
+          className="absolute top-5 right-7 cursor-pointer md:hidden"
+          htmlFor="navbar-open"
+        >
+          <span className="sr-only">Toggle Navigation</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </label>
+        <nav
+          aria-label="Header Navigation"
+          className="peer-checked:mt-8 peer-checked:max-h-56 flex max-h-0 w-full flex-col items-center justify-between overflow-hidden transition-all md:ml-24 md:max-h-full md:flex-row md:items-start"
+        >
+          <ul className="flex flex-col items-center space-y-2 md:ml-auto md:flex-row md:space-y-0">
+            <li className="text-gray-600 md:mr-12 hover:text-blue-600">
+              <a href="/#howitworks">How it Works</a>
+            </li>
+            <li className="text-gray-600 md:mr-12 hover:text-blue-600">
+              <a href="/#idea">Our Initiative</a>
+            </li>
+            <li className="text-gray-600 md:mr-12 hover:text-blue-600">
+              <button className="rounded-md border-2 border-blue-600 px-6 py-1 font-medium text-blue-600 transition-colors hover:bg-blue-600 hover:text-white">
+                Dashboard
+              </button>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   );
