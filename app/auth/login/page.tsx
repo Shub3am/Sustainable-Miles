@@ -1,12 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-// import RenewableEnergy from "./RenewableEnergy.mp4";
-
 export default function Login() {
   const router = useRouter();
   useEffect(() => {
-    if (localStorage["data"]) {
+    if (localStorage["user"]) {
       router.push("/dashboard");
     }
   }, []);
@@ -14,39 +12,25 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [isError, setError] = useState(false);
   const checkData = async () => {
-    let call = await fetch(`${process.env.NEXT_PUBLIC_backend_url}/auth`, {
-      method: "POST",
+    let call = await fetch(`${process.env.NEXT_PUBLIC_backend_url}`, {
+      method: "post",
       body: JSON.stringify({ email: email, password: password }),
     }).then((res) => res.json());
-    console.log(call);
-    if (call.data) {
-      localStorage.setItem("data", JSON.stringify(call));
+    if (call.success) {
       router.push("/dashboard");
     } else {
       setError(true);
     }
-    // if (res.result) {
-    //   localStorage.setItem("logged_in", "true");
-    //   localStorage.setItem("name", res.name);
-    //   localStorage.setItem("email", email);
-    //   localStorage.setItem("points", res.points);
-    //   router.push("/dashboard");
-    // } else {
-    //   setError(true);
-    // }
   };
 
   return (
     <div className="relative">
-      {/* <video
+      <img
+        src="https://cdn.dribbble.com/users/10448923/screenshots/17337836/media/2b87137e20f19bfb98ea5734351bc30a.png"
         className="absolute inset-0 object-cover w-full h-full"
-        src={RenewableEnergy}
-        autoPlay
-        loop
-        muted
-        playsInline
-      /> */}
-      <div className="relative capitalize">
+        alt=""
+      />
+      <div className="relative bg-gray-900 bg-opacity-75 capitalize">
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="flex flex-col items-center justify-between xl:flex-row">
             <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
@@ -119,14 +103,14 @@ export default function Login() {
                           setError(true);
                         }
                       }}
-                      className="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">
+                      className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">
                       Login
                     </button>
                   </div>
                   <p className="text-xs text-gray-600 sm:text-sm">
                     Thank You for saving Earth!
                   </p>
-                  <a href="/register">
+                  <a href="/accounts/register">
                     <p className="text-lime-500 uppercase">Register</p>
                   </a>
                 </form>
