@@ -81,17 +81,22 @@ const Confirm = ({ searchParams }) => {
           className="bg-black flex text-xl items-center py-4 text-white mt-4 justify-center text-center m-4 transform hover:scale-105 transition cursor-pointer
 "
           onClick={async () => {
-            let call = await fetch(`${process.env.backend_url}/points`, {
-              method: "post",
-              body: JSON.stringify({
-                points: points,
-                id: localStorage.getItem("data")?.data.id,
-              }),
-            }).then((res) => res.json());
+            let dat = JSON.parse(localStorage.getItem("data"));
+            let call = await fetch(
+              `${process.env.NEXT_PUBLIC_backend_url}/points`,
+              {
+                method: "POST",
+                body: JSON.stringify({
+                  points: points,
+                  id: dat.data.id,
+                }),
+                headers: { authorization: localStorage.getItem("data") },
+              }
+            ).then((res) => res.json());
             if (call.error) {
               alert(call.error);
             } else {
-              redirect("/success");
+              router.push("/success");
             }
           }}
           style={{ marginBottom: 50 }}>
