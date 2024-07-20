@@ -15,8 +15,8 @@ export default function Dashboard() {
   const [date, setDate] = useState(new Date().toISOString().slice(0, 16));
   const router = useRouter();
   useEffect(() => {
-    if (!localStorage["logged_in"]) {
-      router.push("/accounts/login");
+    if (!localStorage["data"]) {
+      router.push("/login");
     }
   });
   return (
