@@ -12,7 +12,7 @@ export default function Header() {
           href="/"
           className="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0"
         >
-          <Image alt="logo" src={electric_car} width={50} height={50} />
+          <Image alt="logo" src="/electric-car.png" width={50} height={50} />
           <span className="ml-3 text-xl">Sustainable Miles</span>
         </a>
         <input type="checkbox" className="peer hidden" id="navbar-open" />
