@@ -56,9 +56,9 @@ const RideSelector = (props) => {
               }}>
               <Image
                 alt="car-image"
-                width={20}
-                height={20}
-                className={"h-20 px-4"}
+                width={40}
+                height={40}
+                className={"px-4"}
                 src={car.imgUrl}
               />
               <div

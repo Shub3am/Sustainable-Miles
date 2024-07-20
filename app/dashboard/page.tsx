@@ -7,8 +7,8 @@ import Map from "../components/Map/Map";
 
 export default function Dashboard() {
   const options = [
-    { name: "Ride", href: "/selector", img: car },
-    { name: "Leaderboard", href: "/leaderboard", img: cycle },
+    { name: "Ride", href: "/selector", img: "/car.jpg" },
+    { name: "Leaderboard", href: "/leaderboard", img: "/cycle.jpg" },
   ];
   const [date, setDate] = useState(new Date().toISOString().slice(0, 16));
   const router = useRouter();
