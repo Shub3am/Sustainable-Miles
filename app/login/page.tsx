@@ -1,12 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import RenewableEnergy from "./RenewableEnergy.mp4";
 
 export default function Login() {
   const router = useRouter();
   useEffect(() => {
-    if (localStorage["logged_in"]) {
+    if (localStorage["data"]) {
       router.push("/dashboard");
     }
   }, []);
@@ -14,27 +13,33 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [isError, setError] = useState(false);
   const checkData = async () => {
-    let call = await fetch("/api/accounts", {
-      method: "post",
-      body: JSON.stringify({ type: "login", email: email, password: password }),
-    });
-    let res = await call.json();
-    if (res.result) {
-      localStorage.setItem("logged_in", "true");
-      localStorage.setItem("name", res.name);
-      localStorage.setItem("email", email);
-      localStorage.setItem("points", res.points);
+    let call = await fetch(`${process.env.NEXT_PUBLIC_backend_url}/auth`, {
+      method: "POST",
+      body: JSON.stringify({ email: email, password: password }),
+    }).then((res) => res.json());
+    console.log(call);
+    if (call.data) {
+      localStorage.setItem("data", JSON.stringify(call));
       router.push("/dashboard");
     } else {
       setError(true);
     }
+    // if (res.result) {
+    //   localStorage.setItem("logged_in", "true");
+    //   localStorage.setItem("name", res.name);
+    //   localStorage.setItem("email", email);
+    //   localStorage.setItem("points", res.points);
+    //   router.push("/dashboard");
+    // } else {
+    //   setError(true);
+    // }
   };
 
   return (
     <div className="relative">
       <video
         className="absolute inset-0 object-cover w-full h-full"
-        src={RenewableEnergy}
+        src={"/RenewableEnergy.mp4"}
         autoPlay
         loop
         muted
@@ -68,8 +73,7 @@ export default function Login() {
                     ) : null}
                     <label
                       htmlFor="firstName"
-                      className="inline-block mb-1 font-medium"
-                    >
+                      className="inline-block mb-1 font-medium">
                       Email
                     </label>
                     <input
@@ -87,8 +91,7 @@ export default function Login() {
                   <div className="mb-1 sm:mb-2">
                     <label
                       htmlFor="lastName"
-                      className="inline-block mb-1 font-medium"
-                    >
+                      className="inline-block mb-1 font-medium">
                       Password
                     </label>
                     <input
@@ -115,8 +118,7 @@ export default function Login() {
                           setError(true);
                         }
                       }}
-                      className="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg"
-                    >
+                      className="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">
                       Login
                     </button>
                   </div>
