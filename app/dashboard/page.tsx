@@ -13,7 +13,7 @@ export default function Dashboard() {
   const [date, setDate] = useState(new Date().toISOString().slice(0, 16));
   const router = useRouter();
   useEffect(() => {
-    if (!localStorage.getItem("data")) {
+    if (!window.localStorage.getItem("data")) {
       router.push("/login");
     }
   }, []);
@@ -26,7 +26,12 @@ export default function Dashboard() {
             <Link href={opt.href} key={id} passHref>
               <div className="flex flex-col bg-white flex-1 m-1 h-64 items-center justify-end rounded-lg shadow-lg transform text-xl cursor-pointer px-5 py-12">
                 <div className="w-44 h-44">
-                  <Image src={opt.img} alt={opt.name} />
+                  <Image
+                    src={opt.img}
+                    alt={opt.name}
+                    width={150}
+                    height={150}
+                  />
                 </div>
                 <p className="text-white p-2 text-lg lg:w-2/3 rounded-md text-center mt-6 bg-theme-primary">
                   {opt.name}
@@ -38,6 +43,8 @@ export default function Dashboard() {
             <div className="w-44 h-44">
               <Image
                 src={"/booking.svg"}
+                width={150}
+                height={150}
                 alt="booking"
                 className=""
                 layout=""
@@ -49,7 +56,7 @@ export default function Dashboard() {
               name="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              className="lg:w-2/3 mt-6 px-4 py-5 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-theme-primary text-white"
+              className="lg:w-2/3 text-center m-auto mt-6 px-4 py-3 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-theme-primary text-white flex items-center justify-center"
             />
           </div>
         </div>

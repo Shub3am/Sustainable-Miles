@@ -49,10 +49,10 @@ export default function Header() {
                   Dashboard
                 </button>
               </a>
-              {localStorage["data"] ? (
+              {window.localStorage["data"] ? (
                 <button
                   onClick={() => {
-                    localStorage.clear();
+                    window.localStorage.clear();
                     router.refresh();
                     router.push("/login");
                   }}
