@@ -17,7 +17,6 @@ export default function Login() {
       method: "POST",
       body: JSON.stringify({ email: email, password: password }),
     }).then((res) => res.json());
-    console.log(call);
     if (call.data) {
       localStorage.setItem("data", JSON.stringify(call));
       router.push("/dashboard");

@@ -9,8 +9,10 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [isError, setError] = useState(false);
   useEffect(() => {
-    if (localStorage["data"]) {
-      router.push("/dashboard");
+    if (typeof window !== "undefined") {
+      if (!window.localStorage.getItem("data")) {
+        router.push("/login");
+      }
     }
   }, []);
 

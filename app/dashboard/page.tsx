@@ -13,8 +13,10 @@ export default function Dashboard() {
   const [date, setDate] = useState(new Date().toISOString().slice(0, 16));
   const router = useRouter();
   useEffect(() => {
-    if (!window.localStorage.getItem("data")) {
-      router.push("/login");
+    if (typeof window !== "undefined") {
+      if (!window.localStorage.getItem("data")) {
+        router.push("/login");
+      }
     }
   }, []);
   return (

@@ -49,7 +49,7 @@ export default function Header() {
                   Dashboard
                 </button>
               </a>
-              {window.localStorage["data"] ? (
+              {typeof window !== "undefined" && window.localStorage["data"] ? (
                 <button
                   onClick={() => {
                     window.localStorage.clear();
