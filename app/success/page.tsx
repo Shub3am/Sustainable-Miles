@@ -1,11 +1,17 @@
+"use client";
 import Image from "next/image";
-import successSvg from "../../public/success.svg";
 
 export default function Success() {
   return (
     <div className="text-gray-600 relative lg:px-4 px-8 py-16 mx-auto lg:pt-32 md:px-8 xl:px-20 sm:max-w-full md:max-w-full capitalize flex justify-between items-center lg:flex-row flex-col gap-8">
       <div className="lg:w-1/3 mx-auto inline-flex items-center justify-center">
-        <Image src={successSvg} alt="happy girl" className="w-2/3" />
+        <Image
+          src={"/success.svg"}
+          width={150}
+          height={150}
+          alt="happy girl"
+          className="w-2/3"
+        />
       </div>
 
       <div className="sm:text-left text-center lg:w-3/5 lg:mx-auto">
