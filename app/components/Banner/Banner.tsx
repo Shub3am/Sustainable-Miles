@@ -1,5 +1,5 @@
 import Image from "next/image";
-import carRoadSvg from "../../../public/car-road.svg"
+import carRoadSvg from "../../../public/car-road.svg";
 
 export default function Banner() {
   return (
@@ -9,14 +9,16 @@ export default function Banner() {
           <div className="max-w-xl mb-6 text-center lg:text-left">
             <div>
               <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-white uppercase rounded-full bg-theme-primary">
-                Gamify Your Health
+                Get Paid While You Ride
               </p>
             </div>
             <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl sm:leading-none">
               The quick, brown fox
               <br className="hidden md:block" />
               jumps over{" "}
-              <span className="inline-block text-theme-primary underline decoration-wavy">a lazy dog</span>
+              <span className="inline-block text-theme-primary underline decoration-wavy">
+                a lazy dog
+              </span>
             </h2>
             <p className="text-base text-gray-700 md:text-lg">
               Get Rewarded While You a fellow Earthling contribute by switching
@@ -25,7 +27,7 @@ export default function Banner() {
           </div>
           <div className="flex items-center">
             <a
-              href="/accounts/login"
+              href="/register"
               className="inline-flex items-center justify-center h-10 md:w-fit w-1/2 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-theme-primary hover:bg-theme-primary-hover focus:shadow-outline focus:outline-none">
               Get started
             </a>
