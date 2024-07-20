@@ -3,7 +3,7 @@ import powerfulSvg from "../../../public/powerful.svg";
 
 export default function ReduceCost() {
   return (
-    <div className="bg-gray-50 text-gray-600 relative lg:px-4 px-8 py-16 mx-auto lg:py-32 md:px-8 xl:px-20 sm:max-w-full md:max-w-full capitalize flex justify-between items-center lg:flex-row flex-col gap-8">
+    <div className="text-gray-600 relative lg:px-4 px-8 py-16 mx-auto lg:py-32 md:px-8 xl:px-20 sm:max-w-full md:max-w-full capitalize flex justify-between items-center lg:flex-row flex-col gap-8">
       <div className="lg:w-1/3 inline-flex items-center justify-center">
         <Image src={powerfulSvg} alt="girl" className="w-2/3" />
       </div>

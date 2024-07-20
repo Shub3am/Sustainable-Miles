@@ -1,6 +1,19 @@
+"use client";
+
 import Image from "next/image";
 
+import { useEffect, useState } from "react";
+
 export default function Header() {
+  const [data, setData] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedData = localStorage.getItem("data");
+      setData(storedData);
+    }
+  }, []);
+
   return (
     <header className="shadow">
       <div className="relative flex max-w-screen-xl flex-col overflow-hidden px-2 py-2 md:mx-auto md:flex-row md:items-center">
@@ -49,6 +62,13 @@ export default function Header() {
                   Dashboard
                 </button>
               </a>
+              {data && (
+                <a href="/dashboard">
+                  <button className="ml-2 rounded border-theme-primary px-6 py-2 font-medium hover:bg-theme-primary-hover transition-colors bg-theme-primary text-white">
+                    Logout
+                  </button>
+                </a>
+              )}
             </li>
           </ul>
         </nav>

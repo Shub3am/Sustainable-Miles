@@ -3,7 +3,7 @@ import stepsSvg from "../../../public/steps.svg"
 
 export default function Process() {
   return (
-    <div className="text-gray-600 body-font capitalize" id="howitworks">
+    <div className="bg-green-50 text-gray-600 body-font capitalize" id="howitworks">
       <div className="container px-5 py-24 mx-auto flex flex-wrap">
         <div className="text-center mb-20 lg:w-3/5 lg:mx-auto">
           <h1 className="font-bold sm:text-4xl text-2xl capitalize text-black">
