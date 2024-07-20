@@ -4,19 +4,16 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Map from "../components/Map/Map";
-import bookingSvg from "../../public/booking.svg"
-import locationSvg from "../../public/location.svg"
-import ridingSvg from "../../public/location.svg"
 
 export default function Dashboard() {
   const options = [
-    { name: "Ride", href: "/selector", img: ridingSvg },
-    { name: "Leaderboard", href: "/leaderboard", img: locationSvg },
+    { name: "Ride", href: "/selector", img: "/location.svg" },
+    { name: "Leaderboard", href: "/leaderboard", img: "/location.svg" },
   ];
   const [date, setDate] = useState(new Date().toISOString().slice(0, 16));
   const router = useRouter();
   useEffect(() => {
-    if (!localStorage["data"]) {
+    if (!localStorage.getItem("data")) {
       router.push("/login");
     }
   }, []);
@@ -29,10 +26,7 @@ export default function Dashboard() {
             <Link href={opt.href} key={id} passHref>
               <div className="flex flex-col bg-white flex-1 m-1 h-64 items-center justify-end rounded-lg shadow-lg transform text-xl cursor-pointer px-5 py-12">
                 <div className="w-44 h-44">
-                <Image
-                  src={opt.img}
-                  alt={opt.name}
-                />
+                  <Image src={opt.img} alt={opt.name} />
                 </div>
                 <p className="text-white p-2 text-lg lg:w-2/3 rounded-md text-center mt-6 bg-theme-primary">
                   {opt.name}
@@ -42,7 +36,12 @@ export default function Dashboard() {
           ))}
           <div className="flex flex-col bg-white flex-1 m-1 h-64 items-center justify-center rounded-lg shadow-lg transform text-xl cursor-pointer px-5 py-12">
             <div className="w-44 h-44">
-              <Image src={bookingSvg} alt="booking" className="" layout="" />
+              <Image
+                src={"/booking.svg"}
+                alt="booking"
+                className=""
+                layout=""
+              />
             </div>
             <input
               id="date"
