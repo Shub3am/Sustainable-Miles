@@ -1,24 +1,21 @@
+import bikingSvg from "../../../public/biking.svg"
+import rightDirectionSvg from "../../../public/right-direction.svg"
+import peopleCoffeeSvg from "../../../public/people-coffee.svg"
+
+import Image from "next/image";
+
 export default function Working() {
   return (
     <section className="text-gray-600 body-font" id="idea">
       <div className="container px-5 py-24 mx-auto capitalize">
-        <div className="text-center mb-20">
-          <h1 className="font-semibold text-2xl capitalize font-mono text-black">
-            How Gamifying mobility can help sustainability in a number of ways!
+        <div className="text-center mb-20 lg:w-3/5 lg:mx-auto">
+          <h1 className="font-bold text-4xl capitalize text-black">
+            How Gamifying mobility can help <span className="text-theme-primary underline decoration-wavy">sustainability</span> in a number of ways!
           </h1>
         </div>
-        <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+        <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col ">
           <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 flex-shrink-0">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="sm:w-16 sm:h-16 w-10 h-10"
-              viewBox="0 0 24 24">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-            </svg>
+           <Image src={rightDirectionSvg} alt="Right direcition" />
           </div>
           <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
             <h2 className="text-gray-900 text-lg title-font font-medium mb-2">
@@ -42,33 +39,12 @@ export default function Working() {
             </p>
           </div>
           <div className="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 sm:ml-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 flex-shrink-0">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="sm:w-16 sm:h-16 w-10 h-10"
-              viewBox="0 0 24 24">
-              <circle cx="6" cy="6" r="3"></circle>
-              <circle cx="6" cy="18" r="3"></circle>
-              <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
-            </svg>
+          <Image src={bikingSvg} alt="biking on the road" />
           </div>
         </div>
         <div className="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col">
           <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 flex-shrink-0">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="sm:w-16 sm:h-16 w-10 h-10"
-              viewBox="0 0 24 24">
-              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
+          <Image src={peopleCoffeeSvg} alt="3 people with coffee" />
           </div>
           <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
             <h2 className="text-gray-900 text-lg title-font font-medium mb-2">
@@ -81,7 +57,7 @@ export default function Working() {
             </p>
           </div>
         </div>
-        <button className="flex mx-auto mt-20 text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg font-mono">
+        <button className="flex mx-auto mt-20 text-white `bg-green-500` border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg font-mono">
           How We Will Sustain The App!
         </button>
       </div>
