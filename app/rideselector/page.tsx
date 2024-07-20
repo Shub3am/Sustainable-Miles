@@ -4,13 +4,13 @@ import { useEffect, useState } from "react";
 import Map from "../components/Map/Map";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import RideSelector from "./RideSelector";
 
 const Confirm = ({ searchParams }) => {
   const router = useRouter();
   const { pickuplocation, dropofflocation } = searchParams;
-  console.log(searchParams);
+  const [points, SelectPoints] = useState(0);
   const [pickupCoordinate, setPickupCoordinate] = useState([
     -77.052256, 38.924735,
   ]);
@@ -73,25 +73,26 @@ const Confirm = ({ searchParams }) => {
       />
       <div className="flex-1  h-1/2 overflow-y-scroll flex flex-col">
         <RideSelector
+          updatePoints={SelectPoints}
           pickupCoordinate={pickupCoordinate}
           dropoffCoordinate={dropoffCoordinate}
         />
         <div
           className="bg-black flex text-xl items-center py-4 text-white mt-4 justify-center text-center m-4 transform hover:scale-105 transition cursor-pointer
 "
-          onClick={() => {
-            fetch("/api/points", {
+          onClick={async () => {
+            let call = await fetch(`${process.env.backend_url}/points`, {
               method: "post",
               body: JSON.stringify({
-                points: localStorage.getItem("pointer"),
-                email: localStorage.getItem("email"),
+                points: points,
+                id: localStorage.getItem("data")?.data.id,
               }),
-            });
-            alert(
-              `Thank You for choosing This Transport, You got ${localStorage.getItem(
-                "pointer"
-              )} points will in real life get your points after your trip has been finished`
-            );
+            }).then((res) => res.json());
+            if (call.error) {
+              alert(call.error);
+            } else {
+              redirect("/success");
+            }
           }}
           style={{ marginBottom: 50 }}>
           Confirm

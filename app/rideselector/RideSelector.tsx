@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { carList } from "./TransportList";
 import "./dash.css";
 import Image from "next/image";
-import haversineDistance from "@erexstudio/geo-span-measure";
 
 const RideSelector = (props) => {
   const [rideDuration, setRideDuration] = useState(0);
@@ -56,7 +55,7 @@ const RideSelector = (props) => {
               key={index}
               onClick={() => {
                 setSelected({ index: index, enabled: !selected.enabled });
-                localStorage.setItem("pointer", String(car.points));
+                props.SelectPoints(car.points);
               }}>
               <Image
                 alt="car-image"
