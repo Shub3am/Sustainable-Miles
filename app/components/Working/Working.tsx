@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Working() {
   return (
-    <section className="text-gray-600 body-font" id="idea">
+    <section className="text-gray-600 body-font bg-green-50" id="idea">
       <div className="container px-5 py-24 mx-auto capitalize">
         <div className="text-center mb-20 lg:w-3/5 lg:mx-auto">
           <h1 className="font-bold sm:text-4xl text-2xl capitalize text-black">
@@ -39,7 +39,7 @@ export default function Working() {
           </div>
         </div>
         <div className="flex items-center mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
-          <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0 w-2/3 ">
+          <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0 lg:w-2/3 ">
             <h2 className="text-gray-900 text-2xl title-font font-semibold mb-2 underline decoration-wavy decoration-theme-primary">
               Engagement
             </h2>
@@ -64,7 +64,7 @@ export default function Working() {
               className="w-2/3"
             />
           </div>
-          <div className="w-2/3 flex-grow sm:text-left text-center mt-6 sm:mt-0">
+          <div className="lg:w-2/3 flex-grow sm:text-left text-center mt-6 sm:mt-0">
             <h2 className="text-gray-900 text-2xl title-font font-semibold mb-2 underline decoration-wavy decoration-theme-primary">
               Awareness
             </h2>
@@ -77,9 +77,6 @@ export default function Working() {
             </p>
           </div>
         </div>
-        <button className="flex mx-auto mt-20 text-white `bg-green-500` border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg font-mono">
-          How We Will Sustain The App!
-        </button>
       </div>
     </section>
   );
