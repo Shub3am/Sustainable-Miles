@@ -24,7 +24,21 @@
 // };
 
 const nextConfig = {
-  typescript: {ignoreBuildErrors: true}
+  typescript: {ignoreBuildErrors: true},
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'img.icons8.com',
+        port: '',
+        pathname: '/**',
+      },
+      {protocol: 'https', 
+        hostname: 'cdn.dribbble.com',
+        pathname: "/**"
+      }
+    ],
+  }
 }
 
 module.exports = nextConfig

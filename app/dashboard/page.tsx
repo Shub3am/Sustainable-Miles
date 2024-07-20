@@ -7,8 +7,8 @@ import Map from "../components/Map/Map";
 
 export default function Dashboard() {
   const options = [
-    { name: "Ride", href: "/search", img: "/car.jpg" },
-    { name: "Leaderboard", href: "/leaderboard", img: "/cycle.jpg" },
+    { name: "Ride", href: "/selector", img: car },
+    { name: "Leaderboard", href: "/leaderboard", img: cycle },
   ];
   const [date, setDate] = useState(new Date().toISOString().slice(0, 16));
   const router = useRouter();
@@ -50,7 +50,7 @@ export default function Dashboard() {
         </div>
 
         <div className="flex justify-center mt-4">
-          <Link href="/search" passHref>
+          <Link href="/selector" passHref>
             <button className="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">
               Where to?
             </button>
