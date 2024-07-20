@@ -25,7 +25,7 @@ export default function Banner() {
           </div>
           <div className="flex items-center">
             <a
-              href="/accounts/login"
+              href="/login"
               className="inline-flex items-center justify-center h-10 md:w-fit w-1/2 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-theme-primary hover:bg-theme-primary-hover focus:shadow-outline focus:outline-none">
               Get started
             </a>

@@ -16,7 +16,7 @@ export default function Dashboard() {
   const router = useRouter();
   useEffect(() => {
     if (!localStorage["logged_in"]) {
-      router.push("/accounts/login");
+      router.push("/login");
     }
   });
   return (

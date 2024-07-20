@@ -142,7 +142,7 @@ export default function Register() {
                   <p className="text-xs text-gray-600 sm:text-sm">
                     We respect your privacy.
                   </p>
-                  <a href="/accounts/login">
+                  <a href="/login">
                     <p className="text-lime-500 uppercase">Login In</p>
                   </a>
                 </form>

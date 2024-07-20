@@ -6,8 +6,8 @@ export default function Home() {
   return (
     <div>
       <Banner />
-      <ReduceCost />
       <Working />
+      <ReduceCost />
       <Process />
     </div>
   );
