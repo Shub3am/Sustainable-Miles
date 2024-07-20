@@ -43,7 +43,7 @@ export default function Login() {
               <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
                 Join the Eco-Revolution
                 <br className="hidden md:block" />
-                Walk and Talk <span className="text-teal-400">Sustainable</span>
+                Walk and Talk <span className="text-theme-primary">Sustainable</span>
               </h2>
               <p className="max-w-xl mb-4 text-base text-gray-400 md:text-lg">
                 We Welcome You To Sustainable Miles which helps you not only to
@@ -116,9 +116,12 @@ export default function Login() {
                   <p className="text-xs text-gray-600 sm:text-sm">
                     Thank You for saving Earth!
                   </p>
-                  <a href="/register">
-                    <p className="text-lime-500 uppercase">Register</p>
+                  <p>
+                 Don't have an account? {" "}
+                  <a href="/register" className="text-theme-primary hover:text-gray-900 underline">
+                    Resgiter
                   </a>
+                 </p>
                 </form>
               </div>
             </div>
