@@ -24,15 +24,6 @@ export default function Login() {
     } else {
       setError(true);
     }
-    // if (res.result) {
-    //   localStorage.setItem("logged_in", "true");
-    //   localStorage.setItem("name", res.name);
-    //   localStorage.setItem("email", email);
-    //   localStorage.setItem("points", res.points);
-    //   router.push("/dashboard");
-    // } else {
-    //   setError(true);
-    // }
   };
 
   return (

@@ -1,8 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
-mapboxgl.accessToken =
-  "pk.eyJ1Ijoic2h1YmhhbXZzIiwiYSI6ImNsc2l2Mm12MDIxdnoyam8xd2MwMTc2NWYifQ.Mzw_wTmvnrEZ7UaBdoj_tQ";
+mapboxgl.accessToken = process.env.NEXT_PUBLIC_mapbox;
 
 const Map = (props) => {
   const mapContainer = useRef(null);
@@ -36,8 +35,7 @@ const Map = (props) => {
     <div
       ref={mapContainer}
       id="map"
-      className="map-container h-screen w-full flex flex-1"
-    ></div>
+      className="map-container h-screen w-full flex flex-1"></div>
   );
 };
 
