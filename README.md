@@ -1,6 +1,3 @@
-![image](https://github.com/Shub3am/Sustainable-Miles/assets/77344771/bf26a544-ed53-4961-ab12-1b1398ef4b3e)
-![Back](https://github.com/Shub3am/Sustainable-Miles/assets/77344771/47efdf84-2047-4653-9d57-0400f1daa306)
-![Login](https://github.com/Shub3am/Sustainable-Miles/assets/77344771/d2a2ca3d-1bca-4a1a-aaa4-3ecdb9ab12df)
 
 
 ## Team Debug Squad
