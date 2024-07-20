@@ -37,14 +37,14 @@ export default function Header() {
           className="peer-checked:mt-8 peer-checked:max-h-56 flex max-h-0 w-full flex-col items-center justify-between overflow-hidden transition-all md:ml-24 md:max-h-full md:flex-row md:items-start"
         >
           <ul className="flex flex-col items-center space-y-2 md:ml-auto md:flex-row md:space-y-0">
-            <li className="text-gray-600 md:mr-12 hover:text-blue-600">
+            <li className="text-gray-600 md:mr-12 hover:text-purple-600">
               <a href="/#howitworks">How it Works</a>
             </li>
-            <li className="text-gray-600 md:mr-12 hover:text-blue-600">
+            <li className="text-gray-600 md:mr-12 hover:text-purple-600">
               <a href="/#idea">Our Initiative</a>
             </li>
-            <li className="text-gray-600 md:mr-12 hover:text-blue-600">
-              <button className="rounded-md border-2 border-blue-600 px-6 py-1 font-medium text-blue-600 transition-colors hover:bg-blue-600 hover:text-white">
+            <li className="text-gray-600 md:mr-12 hover:text-purple-600">
+              <button className="rounded-md border-2 border-purple-600 px-6 py-1 font-medium text-purple-600 transition-colors hover:bg-purple-600 hover:text-white">
                 Dashboard
               </button>
             </li>
