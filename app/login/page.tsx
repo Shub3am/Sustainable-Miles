@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-// import RenewableEnergy from "./RenewableEnergy.mp4";
 
 export default function Login() {
   const router = useRouter();
@@ -38,14 +37,14 @@ export default function Login() {
 
   return (
     <div className="relative">
-      {/* <video
+      <video
         className="absolute inset-0 object-cover w-full h-full"
-        src={RenewableEnergy}
+        src={"/RenewableEnergy.mp4"}
         autoPlay
         loop
         muted
         playsInline
-      /> */}
+      />
       <div className="relative capitalize">
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="flex flex-col items-center justify-between xl:flex-row">
