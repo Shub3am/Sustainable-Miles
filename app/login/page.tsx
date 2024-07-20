@@ -37,7 +37,7 @@ export default function Login() {
         playsInline
       />
       <div className="relative capitalize">
-        <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
           <div className="flex flex-col items-center justify-between xl:flex-row h-screen">
             <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
               <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
@@ -51,7 +51,7 @@ export default function Login() {
               </p>
             </div>
             <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
-              <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
+              <div className="bg-white rounded shadow-2xl sm:p-10">
                 <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                   Welcome Fellow Earth-Ling
                 </h3>
@@ -64,7 +64,8 @@ export default function Login() {
                     ) : null}
                     <label
                       htmlFor="firstName"
-                      className="inline-block mb-1 font-medium">
+                      className="inline-block mb-1 font-medium"
+                    >
                       Email
                     </label>
                     <input
@@ -82,7 +83,8 @@ export default function Login() {
                   <div className="mb-1 sm:mb-2">
                     <label
                       htmlFor="lastName"
-                      className="inline-block mb-1 font-medium">
+                      className="inline-block mb-1 font-medium"
+                    >
                       Password
                     </label>
                     <input
@@ -109,7 +111,8 @@ export default function Login() {
                           setError(true);
                         }
                       }}
-                      className="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">
+                      className="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg"
+                    >
                       Login
                     </button>
                   </div>

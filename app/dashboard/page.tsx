@@ -3,14 +3,12 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import car from "./car.jpg";
-import cycle from "./cycle.jpg";
 import Map from "../components/Map/Map";
 
 export default function Dashboard() {
   const options = [
-    { name: "Ride", href: "/search", img: car },
-    { name: "Leaderboard", href: "/leaderboard", img: cycle },
+    { name: "Ride", href: "/search", img: "/car.jpg" },
+    { name: "Leaderboard", href: "/leaderboard", img: "/cycle.jpg" },
   ];
   const [date, setDate] = useState(new Date().toISOString().slice(0, 16));
   const router = useRouter();
@@ -50,7 +48,7 @@ export default function Dashboard() {
             />
           </div>
         </div>
-        {/* Where to button */}
+
         <div className="flex justify-center mt-4">
           <Link href="/search" passHref>
             <button className="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">
