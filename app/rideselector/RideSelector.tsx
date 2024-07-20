@@ -56,8 +56,8 @@ const RideSelector = (props) => {
               }}>
               <Image
                 alt="car-image"
-                width={40}
-                height={40}
+                width={100}
+                height={100}
                 className={"px-4"}
                 src={car.imgUrl}
               />
@@ -70,15 +70,16 @@ const RideSelector = (props) => {
                   {car.service}
                 </div>
                 <div
-                  className="text-blue-500 text-xs
+                  className="text-blue-500 text-xs flex gap-3
 ">
-                  {Math.round(Math.random() * 100 + 5)} min away {car.points}
+                  <p>{Math.round(Math.random() * 15 + 5)} min away</p>|
+                  <p> {car.points} Points</p>
                 </div>
               </div>
               <div
                 className="px-4 text-sm
 ">
-                {"$" + (rideDuration * car.multiplier).toFixed(2)}
+                {"₹" + (rideDuration * car.multiplier).toFixed(2)}
               </div>
             </div>
           </div>

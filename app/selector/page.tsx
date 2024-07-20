@@ -84,10 +84,14 @@ const Search = () => {
           },
         }}
         passHref>
-        <div className="bg-black flex text-xl  items-center py-2 text-white mt-4 justify-center text-center m-12 transform hover:scale-105 transition cursor-pointer">
+        <div className="bg-black flex text-xl items-center py-2 text-white mt-4 justify-center text-center m-12 transform hover:scale-105 transition cursor-pointer">
           Confirm Locations
         </div>
       </Link>
+      <div className="flex m-auto items-center justify-center flex-col gap-3">
+        <Image src={"/meme_reddit.webp"} alt="meme" width={350} height={350} />
+        <h3>Your Cat Cab On the Way!</h3>
+      </div>
     </div>
   );
 };
