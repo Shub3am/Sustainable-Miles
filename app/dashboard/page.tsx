@@ -16,7 +16,7 @@ export default function Dashboard() {
     if (!localStorage["data"]) {
       router.push("/login");
     }
-  });
+  }, []);
   return (
     <div className="flex flex-col h-screen bg-gray-100">
       <Map />
