@@ -30,7 +30,6 @@ const RideSelector = (props) => {
       .then((response) => response.json())
       .then((data) => {
         if (data.routes[0]) {
-          console.log(data);
           setRideDistance(Math.round(data.routes[0].distance / 1000));
           setRideDuration(data.routes[0].duration / 100);
         }
@@ -55,7 +54,7 @@ const RideSelector = (props) => {
               key={index}
               onClick={() => {
                 setSelected({ index: index, enabled: !selected.enabled });
-                props.SelectPoints(car.points);
+                props.updatePoints(car.points);
               }}>
               <Image
                 alt="car-image"

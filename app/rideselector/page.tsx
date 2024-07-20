@@ -10,7 +10,7 @@ import RideSelector from "./RideSelector";
 const Confirm = ({ searchParams }) => {
   const router = useRouter();
   const { pickuplocation, dropofflocation } = searchParams;
-  const [points, SelectPoints] = useState(0);
+  const [points, SelectPoints] = useState(750);
   const [pickupCoordinate, setPickupCoordinate] = useState([
     -77.052256, 38.924735,
   ]);
