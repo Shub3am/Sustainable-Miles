@@ -10,14 +10,20 @@ export default function Success() {
 
       <div className="sm:text-left text-center lg:w-3/5 lg:mx-auto">
         <h1 className="font-bold sm:text-4xl text-2xl capitalize text-black">
-          Thank You for {" "}
+          Thank You for{" "}
           <span className="text-theme-primary underline decoration-wavy decoration-theme-primary">
             Successfully
           </span>{" "}
           completing your trip!
         </h1>
         <p className="leading-relaxed text-base mt-9 text-md">
-        Thank you for completing your trip with us! We hope you had a fantastic experience and made wonderful memories. Your feedback is invaluable to us, and we'd love to hear your thoughts and suggestions to help us improve our services. Please take a moment to share your experience. Additionally, start planning your next adventure with us—we're excited to assist you in creating another amazing journey. Let us know how we can make your next trip even better!
+          Thank you for completing your trip with us! We hope you had a
+          fantastic experience and made wonderful memories. Your feedback is
+          invaluable to us, and we'd love to hear your thoughts and suggestions
+          to help us improve our services. Please take a moment to share your
+          experience. Additionally, start planning your next adventure with
+          us—we're excited to assist you in creating another amazing journey.
+          Let us know how we can make your next trip even better!
         </p>
       </div>
     </div>

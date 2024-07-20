@@ -1,10 +1,10 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import electric_car from "./electric-car.png";
 
 export default function Header() {
-
+  const router = useRouter();
   return (
     <header className="shadow">
       <div className="relative flex max-w-screen-xl flex-col overflow-hidden px-2 py-2 md:mx-auto md:flex-row md:items-center">
@@ -49,16 +49,16 @@ export default function Header() {
                   Dashboard
                 </button>
               </a>
-              {localStorage["data"] && (
+              {localStorage["data"] ? (
                 <button
                   onClick={() => {
                     localStorage.clear();
-                    location.reload();
+                    router.push("/login");
                   }}
                   className="ml-2 rounded border-theme-primary px-6 py-2 font-medium hover:bg-theme-primary-hover transition-colors bg-theme-primary text-white">
                   Logout
                 </button>
-              )}
+              ) : null}
             </li>
           </ul>
         </nav>

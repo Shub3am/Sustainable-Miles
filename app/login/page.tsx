@@ -124,7 +124,7 @@ export default function Login() {
                       <a
                         href="/register"
                         className="text-theme-primary hover:text-gray-900 underline">
-                        Resgiter
+                        Register
                       </a>
                     </p>
                   </form>
