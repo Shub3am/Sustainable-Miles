@@ -3,7 +3,7 @@ import rightDirectionSvg from "../../../public/right-direction.svg";
 import peopleCoffeeSvg from "../../../public/people-coffee.svg";
 
 import Image from "next/image";
-
+  
 export default function Working() {
   return (
     <section className="text-gray-600 body-font bg-green-50" id="idea">
@@ -30,11 +30,7 @@ export default function Working() {
               Motivation
             </h2>
             <p className="leading-relaxed text-base">
-              Gamification can incentivize and motivate users to make more
-              sustainable travel choices, leading to behavioral changes that can
-              have a significant impact on the environment. Lorem ipsum, dolor
-              sit amet consectetur adipisicing elit. Ipsa dolores magni esse
-              expedita doloribus laborum odio earum omnis voluptatum nobis!
+            Gamification can effectively incentivize and motivate users to make more sustainable travel choices, leading to positive behavioral changes that have a significant and lasting impact on the environment. By engaging users through rewards and challenges, gamification fosters a sense of achievement and responsibility, ultimately contributing to a reduced ecological footprint and a more sustainable future.
             </p>
           </div>
         </div>
@@ -44,12 +40,7 @@ export default function Working() {
               Engagement
             </h2>
             <p className="leading-relaxed text-base">
-              Gamification can also engage users by providing challenges,
-              leaderboards, and rewards, incentivizing sustainable trips. Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Sunt quasi,
-              rerum nulla at nesciunt atque illum nisi illo iure sequi enim?
-              Molestias, necessitatibus quaerat iure aliquam deserunt voluptatem
-              quis tenetur.
+            Gamification can also engage users by providing challenges, leaderboards, and rewards, effectively incentivizing sustainable travel choices. This approach motivates users to adopt environmentally friendly behaviors, leading to a collective positive impact on the environment and fostering long-term sustainability.
             </p>
           </div>
           <div className="lg:w-1/3 inline-flex items-center justify-center rounded-full  sm:relative absolute opacity-25 md:opacity-100">
@@ -69,11 +60,7 @@ export default function Working() {
               Awareness
             </h2>
             <p className="leading-relaxed text-base">
-              Gamification can raise awareness of sustainable transportation
-              options and their benefits, making sustainable transportation more
-              mainstream. Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Amet architecto asperiores accusantium vel deserunt ab,
-              nulla sit animi pariatur. Velit?
+            Gamification can raise awareness of sustainable transportation options and their benefits, making eco-friendly travel more mainstream. By incorporating challenges, rewards, and leaderboards, gamification encourages users to adopt sustainable practices, leading to increased acceptance and use of environmentally friendly transportation methods, ultimately benefiting the planet.
             </p>
           </div>
         </div>
