@@ -8,13 +8,6 @@ export default function Register() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [isError, setError] = useState(false);
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      if (!window.localStorage.getItem("data")) {
-        router.push("/login");
-      }
-    }
-  }, []);
 
   const checkData = async () => {
     let call = await fetch(
