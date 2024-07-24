@@ -7,7 +7,7 @@
 Deployed URL: [http://innovatex.vshubham.com](http://innovatex.vshubham.com)
 
 
-Working:
+### Working:
 1. Customer Book a Cab or Bus From Our App for EV Rides
 
 2. We charge 70% less than Traditional Transports due to Running Cost
@@ -31,6 +31,16 @@ bun dev
 
 ## About Our App
 Our Application aims to reduce the cost of transporation by 70% while being eco-friendly at the same time. Also We are harnessing the power of Diamante's blockchain algorithm in our point based system making sure everyone is safe and secure.
+
+
+## Videos
+
+#### Presentation
+[![Sustainable Miles](https://img.youtube.com/vi/gQHFAFbFams/0.jpg)](https://www.youtube.com/watch?v=gQHFAFbFams)
+
+#### Pitch
+[![Sustainable Miles](https://img.youtube.com/vi/f9au-TI3MFo/0.jpg)](https://www.youtube.com/watch?v=f9au-TI3MFo)
+
 
 ## Screenshots
 <img width="1467" alt="Screenshot 2024-07-21 at 7 05 18 AM" src="https://github.com/user-attachments/assets/5eb450a2-6e02-4ce3-88e0-93e5ab7accee">
